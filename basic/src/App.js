@@ -1,6 +1,11 @@
+import Name from "./Megh";
+
 function App() {
   return (
-   <h1>Namaste React | Megh Bari</h1>
+    <>
+      <Name />
+      <h1>Namaste React | Megh Bari</h1>
+    </>
   );
 }
 
