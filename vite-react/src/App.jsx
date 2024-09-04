@@ -1,10 +1,11 @@
 import Name from "./megh";
 
 function App() {
+  const userName = "Megh"
   return (
     <>
       <Name />
-      <h1>Meghhh</h1>
+      <h1>{userName}</h1>
     </>
   );
 }
