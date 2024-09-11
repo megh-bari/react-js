@@ -2,7 +2,7 @@
 
 A simple and user-friendly password generator built with React. This application allows users to generate secure passwords with customizable options, including length, inclusion of numbers, and special characters. 
 
-## Visit : [Password Generator](https://password-generator-appp.vercel.app/)
+## Visit : [Password Generator](https://password-generator-web-app.vercel.app/)
 
 ## Features
 
