@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { TodoProvider } from "./Context";
 import TodoForm from "./Components/TodoForm";
 import TodoItem from "./Components/TodoItems";
-import Footer from "./Components/footer";
+import Footer from "./Components/Footer";
 
 function App() {
   const [todos, setTodos] = useState([]);
