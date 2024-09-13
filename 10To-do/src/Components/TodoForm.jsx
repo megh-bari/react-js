@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTodo } from "../Context";
+import PlusCircleIcon from "./PlusCircleIcon";
 
 function TodoForm() {
   const [todo, setTodo] = useState("");
@@ -20,14 +21,16 @@ function TodoForm() {
         placeholder="Write Todo..."
         value={todo}
         onChange={(e) => setTodo(e.target.value)}
-        className="w-full border border-black/10 rounded-l-lg px-3 outline-none duration-150 bg-white/20 py-1.5"
+        className="flex-grow px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-s-lg focus:outline-none  focus:border-transparent transition duration-150 ease-in-out"
       />
       <button
-        type="submit"
-        className="rounded-r-lg px-3 py-1 bg-green-600 text-white shrink-0"
-      >
-        Add
-      </button>
+  type="submit"
+  className="inline-flex items-center px-4 py-2 bg-blue-600 text-white font-semibold rounded-r-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-offset-2 transition duration-150 ease-in-out"
+>
+  <PlusCircleIcon className="w-5 h-5 mr-2" />
+  Add
+</button>
+
     </form>
   );
 }

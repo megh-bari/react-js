@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { TodoProvider } from "./Context";
 import TodoForm from "./Components/TodoForm";
 import TodoItem from "./Components/TodoItems";
+import Footer from "./Components/footer";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -13,7 +14,9 @@ function App() {
 
   const updateTodo = (id, updatedTodo) => {
     setTodos((prev) =>
-      prev.map((prevTodo) => (prevTodo.id === id ? { ...prevTodo, ...updatedTodo } : prevTodo))
+      prev.map((prevTodo) =>
+        prevTodo.id === id ? { ...prevTodo, ...updatedTodo } : prevTodo
+      )
     );
   };
 
@@ -50,8 +53,9 @@ function App() {
       value={{ todos, addTodo, updateTodo, deleteTodo, isCompleted }}
     >
       <div className="bg-slate-800 min-h-screen py-8">
-        <div className="w-full max-w-2xl mx-auto rounded-lg px-4 py-3 text-white">
-          <h1 className="text-3xl font-bold text-center mb-8 mt-2">To-Do</h1>
+        <div className="w-full max-w-2xl mx-auto rounded-lg px-4 py-2 text-white">
+          <h1 className="text-3xl font-semibold text-center mb-3 mt-2">TaskTracker</h1>
+         
           <div className="mb-4">
             {/* Todo form goes here */}
             <TodoForm />
@@ -65,6 +69,7 @@ function App() {
             ))}
           </div>
         </div>
+      <Footer />
       </div>
     </TodoProvider>
   );
