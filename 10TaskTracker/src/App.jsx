@@ -52,9 +52,9 @@ function App() {
     <TodoProvider
       value={{ todos, addTodo, updateTodo, deleteTodo, isCompleted }}
     >
-      <div className="bg-slate-800 min-h-screen py-8">
+      <div className="bg-slate-800 min-h-screen py-3">
         <div className="w-full max-w-2xl mx-auto rounded-lg px-4 py-2 text-white">
-          <h1 className="text-3xl font-semibold text-center mb-3 mt-2">TaskTracker</h1>
+          <h1 className="text-3xl font-semibold text-center mb-5">TaskTracker</h1>
          
           <div className="mb-4">
             {/* Todo form goes here */}
