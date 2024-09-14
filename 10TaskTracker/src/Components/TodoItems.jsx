@@ -23,7 +23,7 @@ function TodoItem({ todo }) {
   return (
     <div
       className={`flex items-center border rounded-lg px-4 py-3 gap-x-3 shadow-sm transition-all duration-300 
-        sm:w-full w-[90%] mx-auto sm:mx-0
+        sm:w-full w-[95%] mx-auto sm:mx-0
         ${todo.completed ? "bg-green-100" : "bg-white"}`}
     >
       <button
