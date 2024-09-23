@@ -11,16 +11,16 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    authService
-      .then((userData) => {
-        if (userData) {
-          dispatch(login({ userData }));
-        } else {
-          dispatch(logout());
-        }
-      })
-      .finally(() => setLoading(false));
-  }, []);
+    authService.getCurrentUser()
+    .then((userData) => {
+      if (userData) {
+        dispatch(login({userData}))
+      } else {
+        dispatch(logout())
+      }
+    })
+    .finally(() => setLoading(false))
+  }, [])
 
   return !loading ? (
     <div className="min-h-screen flex flex-col bg-gray-900 text-white justify-around items-center">
