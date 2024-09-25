@@ -12,61 +12,71 @@ import AddPost from "./pages/AddPost";
 import EditPost from "./pages/EditPost"
 import Post from "./pages/Post"
 import AllPost from "./pages/AllPost.jsx"
+import ErrorBoundary from "./ErrorBoundary.jsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <ErrorBoundary><App /></ErrorBoundary>,
+    errorElement: <ErrorBoundary />,
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: <ErrorBoundary><Home /></ErrorBoundary>,
       },
       {
         path: "/login",
         element: (
-          <AuthLayout authentication={false}>
-            <Login />
-          </AuthLayout>
+          <ErrorBoundary>
+            <AuthLayout authentication={false}>
+              <Login />
+            </AuthLayout>
+          </ErrorBoundary>
         ),
       },
       {
         path: "/signup",
         element: (
-          <AuthLayout authentication={false}>
-            <SignUp />
-          </AuthLayout>
+          <ErrorBoundary>
+            <AuthLayout authentication={false}>
+              <SignUp />
+            </AuthLayout>
+          </ErrorBoundary>
         ),
       },
       {
         path: "/all-posts",
         element: (
-          <AuthLayout authentication>
-            {""}
-            <AllPost />
-          </AuthLayout>
+          <ErrorBoundary>
+            <AuthLayout authentication>
+              <AllPost />
+            </AuthLayout>
+          </ErrorBoundary>
         ),
       },
       {
         path: "/add-post",
         element: (
-          <AuthLayout authentication>
-            {""}
-            <AddPost />
-          </AuthLayout>
+          <ErrorBoundary>
+            <AuthLayout authentication>
+              <AddPost />
+            </AuthLayout>
+          </ErrorBoundary>
         ),
       },
       {
         path: "/edit-post/:slug",
-        element:(
-          <AuthLayout authentication>
-            {""}
-            <EditPost/>
-          </AuthLayout>
+        element: (
+          <ErrorBoundary>
+            <AuthLayout authentication>
+              <EditPost/>
+            </AuthLayout>
+          </ErrorBoundary>
         )
       },
       {
-        path:"/post/:slug",
-        element: <Post/>
+        path: "/post/:slug",
+        element: <ErrorBoundary><Post/></ErrorBoundary>
       }
     ],
   },
@@ -74,8 +84,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-  <Provider store={store}>
-   <RouterProvider router={router}/>
-  </Provider>
+    <ErrorBoundary>
+      <Provider store={store}>
+        <RouterProvider router={router}/>
+      </Provider>
+    </ErrorBoundary>
   </React.StrictMode>
 );

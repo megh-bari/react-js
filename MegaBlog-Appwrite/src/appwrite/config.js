@@ -6,7 +6,6 @@ export class DatabaseService {
   databases;
   storage;
 
-
   constructor() {
     this.client
       .setEndpoint(conf.appwriteEndPointUrl)
