@@ -55,9 +55,9 @@ function App() {
   }, [length, includeUppercase, includeLowercase, includeNumbers, includeSpecialChars, passwordGenerator]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-200">
-      <div className="w-full max-w-md px-10 py-5 bg-white rounded-xl shadow-2xl">
-        <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">
+    <div className="min-h-screen flex items-center justify-center bg-gray-200 px-4 sm:px-0">
+      <div className="w-full max-w-md px-6 py-5 bg-white rounded-xl shadow-2xl">
+        <h1 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-6">
           Password Generator
         </h1>
         <div className="mb-6">
@@ -71,7 +71,7 @@ function App() {
               ref={passwordReference}
             />
             <button
-              className="bg-blue-500 text-white px-5 py-3 hover:bg-blue-600 transition duration-200 flex items-center"
+              className="bg-blue-500 text-white px-5 py-2 hover:bg-blue-600 transition duration-200 flex items-center min-w-[100px] justify-center" // Added min-w and justify-center
               onClick={copyPassword}
             >
               <FontAwesomeIcon icon={buttonIcon} className="mr-2" /> 
@@ -141,8 +141,8 @@ function App() {
               Include Special Characters
             </label>
           </div>
-          <div className="flex justify-center">
-            <p className="font-semibold">
+          <div className="flex justify-center mt-4">
+            <p className="font-semibold text-center">
               Built by{" "}
               <a
                 className="font-bold text-blue-700 hover:text-blue-600 transition duration-200"
